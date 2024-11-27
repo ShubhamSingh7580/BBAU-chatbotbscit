@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+    <script src="chatbot.js" defer></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        width: 100%;
+        min-height: 100vh;
+        background: #f0f0f0;
+        background-size: cover;
+      }
+      .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #724ae8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+      }
+      .header .af-h {
+        font-size: 1.3rem;
+        color: white;
+        margin-right: 20%;
+      }
+      .header .h2 {
+        font-size: 1.3rem;
+        color: white;
+        margin-right: 5%;
+      }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        width: 200px;
+      }
+      .navbar.responsive {
+        display: flex;
+      }
+      .navbar a {
+        font-size: 16px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .navbar a:hover {
+        color: #724ae8;
+      }
+      .nav-menu-btn {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #ff6b6b;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .nav-menu-btn i {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      .nav-menu-btn:hover {
+        background-color: #ff4757;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .new-chat-btn {
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 15px;
+        transition: color 0.3s ease;
+      }
+      .new-chat-btn:hover {
+        color: #ff4757;
+      }
+      .chatbot {
+        position: fixed;
+        left: 10px;
+        right: 10px;
+        bottom: 0;
+        top: 75px;
+        margin: 10px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+        transition: all 0.3s ease;
+      }
+      .chatbot header {
+        background: #724ae8;
+        padding: 11px;
+        text-align: center;
+        color: white;
+        border-radius: 15px 15px 0 0;
+      }
+      .chatbot header h2 {
+        font-size: 1.3rem;
+        color: white;
+      }
+      .chatbot header .af-h {
+        font-size: 1.3rem;
+        color: white;
+        margin-right: 60px;
+      }
+      .chatbot .chatbox {
+        flex-grow: 1;
+        padding: 20px;
+        overflow-y: auto;
+      }
+      .chatbox .chat {
+        display: flex;
+        margin-bottom: 15px;
+      }
+      .chatbox .chat.incoming i {
+        background: #724ae8;
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      .chatbox .chat p {
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .chatbox .chat.incoming p {
+        background: #f0f0f0;
+        color: #333;
+      }
+      .chatbox .chat.outgoing {
+        justify-content: flex-end;
+      }
+      .chatbox .chat.outgoing p {
+        background: #724ae8;
+        color: white;
+        border-radius: 10px;
+      }
+      .chat-input {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background: #f9f9f9;
+        border-top: 1px solid #ddd;
+        border-radius: 0 0 15px 15px;
+      }
+      .chat-input textarea {
+        flex-grow: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        outline: none;
+      }
+      .chat-input span {
+        font-size: 24px;
+        color: #724ae8;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+      @media only screen and (max-width: 600px) {
+        .chatbot {
+          left: 5px;
+          right: 5px;
+          top: 10px;
+          bottom: 10px;
+        }
+        .header {
+          justify-content: space-between;
+        }
+      }
+    </style>
+  </head>
+  <body class="show-chatbot">
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="allfeatures.html">App Features</a>
+        <a href="list.html">List of Qs</a>
+        <a href="courseinfo.html">Course Info</a>
+        <a href="facultyinfo.html">Faculty Info</a>
+        <a href="contact.html">ContactUs</a>
+        <a href="about.html">About College</a>
+        <a href="map.html">Campus Map</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+      <h2 class="h2">Chatbot for BScIT</h2>
+      <i
+        class="bx bx-edit new-chat-btn"
+        onclick="startNewChat()"
+        title="New Chat"
+      ></i>
+    </header>
+
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot for BScIT</h2>
+      </header>
+
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <p>
+            Hi there!✋<br />I'm here to help you with your BScIT related
+            questions. <br />This Chatbot is smartly customized for BScIT, you
+            can take help from the table of "List of Questions" for reference.
+          </p>
+        </li>
+      </ul>
+
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." required></textarea>
+        <span id="send-btn" class="material-symbols-outlined">send</span>
+      </div>
+    </div>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+
+    <script>
+      function startNewChat() {
+        const chatbox = document.querySelector(".chatbox");
+
+        chatbox.innerHTML = `<li class="chat incoming">
+          <p>
+            Hi there!✋<br>I'm here to help you with your BScIT related questions.<br />This Chatbot is smartly customized for BScIT, you can take help from the table of "List
+            of Questions" for reference.
+          </p>
+        </li>
+        `;
+
+        document.querySelector(".chat-input textarea").focus();
+      }
+    </script>
+
+    <script>
+      if (!window.location.href.includes("Chatbot.html")) {
+        window.location.href = "Chatbot.html";
+      }
+    </script>
+  </body>
+</html>

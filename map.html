@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Map</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="chatbot.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        overflow-x: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="allfeatures.html">App Features</a>
+        <a href="Chatbot.html">Chatbot</a>
+        <a href="list.html">List of Qs</a>
+        <a href="courseinfo.html">Course Info</a>
+        <a href="facultyinfo.html">Faculty Info</a>
+        <a href="contact.html">ContactUs</a>
+        <a href="about.html">About College</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+      <h2 class="m-h">Campus Map</h2>
+    </header>
+
+    <div class="logo-section2">
+      <img src="images/bbau-logo.jpg" alt="BBAU Logo" class="college-logo" />
+      <h1 class="college-name">Babasaheb Bhimrao Ambedkar University,<br /></h1>
+      <h2 class="college-Q">A Central University <br /></h2>
+      <h1 class="college-name">Satellite Centre, Amethi- 227413</h1>
+    </div>
+    <div class="divider"></div>
+
+    <div class="map-heading">
+      <h1>BBAU Satellite Center Amethi - Campus Map</h1>
+    </div>
+    <div class="divider"></div>
+
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/d/u/0/embed?mid=1q-zKjqkG8ey67SSViHPcYDBGWS30HVU&ehbc=2E312F&noprof=1"
+        title="BBAU Satellite Centre Amethi Campus Map"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="divider"></div>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+  </body>
+</html>

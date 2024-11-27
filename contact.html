@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(to right, #f5e661, #f6bcbc, #fc51ac);
+      }
+    </style>
+    <script src="chatbot.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="allfeatures.html">App Features</a>
+        <a href="Chatbot.html">Chatbot</a>
+        <a href="list.html">List of Qs</a>
+        <a href="courseinfo.html">Course Info</a>
+        <a href="facultyinfo.html">Faculty Info</a>
+        <a href="about.html">About College</a>
+        <a href="map.html">Campus Map</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+      <h2>Feedback Form</h2>
+    </header>
+
+    <section class="contact">
+      <div class="content">
+        <h2>Contact Us</h2>
+        <p>
+          We are always happy to hear from our students and peoples. If you have
+          any questions or feedback, so just fill the form and send it to us.<br />
+          Please do not hesitate to contact us.<br />
+          We will respond to your query as soon as possible. <br />
+          You can contact us at any time. <br />
+          THANK YOU.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="contactInfo">
+          <div class="box2">
+            <div class="icon2">
+              <i class="bx bxs-map"></i>
+            </div>
+            <div class="text">
+              <h3>Address:-</h3>
+              <p>
+                Babasaheb Bhimrao Ambedkar University, Satellite Campus,<br />
+                Amethi, 227413
+              </p>
+            </div>
+          </div>
+
+          <div class="box2">
+            <div class="icon2">
+              <i class="bx bxs-mobile"></i>
+            </div>
+            <div class="text">
+              <h3>Phone Number:-</h3>
+              <p>+91 9935513331 &amp; +91 7905043562</p>
+            </div>
+          </div>
+
+          <div class="box2">
+            <div class="icon2">
+              <i class="bx bxl-gmail"></i>
+            </div>
+            <div class="text">
+              <h3>Email ID:-</h3>
+              <p>registrar@bbau.ac.in &amp; info@bbau.ac.in</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contactForm">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="contact-left"
+          >
+            <div class="contact-left-title">
+              <h2>Get in touch</h2>
+              <hr />
+            </div>
+            <input
+              type="hidden"
+              name="access_key"
+              value="359fa50e-c491-4e6d-9b4e-d175f151771e"
+            />
+            <div class="nameclass">
+              <input
+                type="text"
+                name="name"
+                placeholder="First name"
+                class="contact-inputs"
+                required
+              />
+              <input
+                type="text"
+                name="name"
+                placeholder="Last name"
+                class="contact-inputs"
+                required
+              />
+            </div>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              class="contact-inputs"
+              required
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              class="contact-inputs"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Your Message..."
+              class="contact-inputs"
+              required
+            ></textarea>
+            <button type="submit">Submit Form</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+  </body>
+</html>

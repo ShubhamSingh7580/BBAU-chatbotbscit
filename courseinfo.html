@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Info</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="chatbot.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="allfeatures.html">App Features</a>
+        <a href="Chatbot.html">Chatbot</a>
+        <a href="list.html">List of Qs</a>
+        <a href="facultyinfo.html">Faculty Info</a>
+        <a href="contact.html">ContactUs</a>
+        <a href="about.html">About College</a>
+        <a href="map.html">Campus Map</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+
+      <h2 class="ci-h">BBAU Courses</h2>
+      <div class="dropdown">
+        <i class="bx bx-dots-vertical-rounded" onclick="toggleDropdown()"></i>
+        <div id="dropdownMenu" class="dropdown-content">
+          <a href="#bca-section" onclick="scrollToSection('.bca')">BCA</a>
+          <a href="#bscit-section" onclick="scrollToSection('.bscit')"
+            >BScIT
+          </a>
+          <a href="#bca-h-section" onclick="scrollToSection('.bca-h')"
+            >BCA-Honors
+          </a>
+          <a href="#bscit-h-section" onclick="scrollToSection('.bscit-h')"
+            >BScIT-Honors
+          </a>
+          <a href="#bcom-section" onclick="scrollToSection('.bcom')">BCom</a>
+          <a href="#dpharma-section" onclick="scrollToSection('.dpharma')"
+            >DPharma
+          </a>
+          <a href="#bpharma-section" onclick="scrollToSection('.bpharma')"
+            >BPharma
+          </a>
+          <a href="#ba-h-section" onclick="scrollToSection('.ba-h')"
+            >BA-History
+          </a>
+          <a href="#ma-e-section" onclick="scrollToSection('.ma-e')"
+            >MA-English
+          </a>
+          <a href="#bfst-section" onclick="scrollToSection('.bfst')">BFST</a>
+          <a href="#ba-soc-section" onclick="scrollToSection('.ba-soc')"
+            >BA-Sociology
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div id="course-section">
+        <h2>Course Information</h2>
+        <p id="para">
+          Welcome! where excellence meets innovation!<br />
+          We invite you to explore our comprehensive range of courses tailored
+          to elevate your career.<br />
+          Explore our Course Information page to discover about the courses
+          available in BBAU, Satellite Centre, Amethi.
+        </p>
+        <div class="carousel-container">
+          <div class="carousel">
+            <div class="carousel-item" onclick="scrollToCourse('.bca')">
+              <img src="images/bca-course.jpg" alt="BCA Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bscit')">
+              <img src="images/bscit-course.jpg" alt="BScIT Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bca-h')">
+              <img src="images/bcah-course.jpg" alt="BCA-H Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bscit-h')">
+              <img src="images/bscith-course.jpg" alt="BScIT-H Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bcom')">
+              <img src="images/bcom-course.jpg" alt="BCom Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.dpharma')">
+              <img src="images/dph-course.jpg" alt="DPharma Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bpharma')">
+              <img src="images/bph-course.jpg" alt="BPharma Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.ba-h')">
+              <img src="images/ba-his-course.jpg" alt="BA-H Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.ma-e')">
+              <img src="images/ma-eng-course.jpg" alt="MA-E Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.bfst')">
+              <img src="images/bfst-course.jpg" alt="BFSt Course" />
+            </div>
+            <div class="carousel-item" onclick="scrollToCourse('.ba-soc')">
+              <img src="images/ba-soc-course.jpg" alt="BA-Soc Course" />
+            </div>
+          </div>
+          <div class="carousel-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+            <span class="indicator"></span>
+          </div>
+        </div>
+        <div class="divider"></div>
+
+        <div class="cards">
+          <div class="card bca">
+            <div class="course-tag">3 Years</div>
+            <div class="content">
+              <h3>BCA</h3>
+              <p>
+                The Bachelor of Computer Applications (BCA) is a 3-year
+                undergraduate degree program in computer science and information
+                technology. It provides a strong foundation in programming,
+                software development, and computer applications. The curriculum
+                typically covers subjects like database management, networking,
+                web development, programming languages (such as C++, Java, and
+                Python), and software engineering. BCA graduates can pursue
+                careers in software development, IT consulting, systems
+                management, and more. It is a popular choice for students
+                looking to enter the IT industry. The 4-year BCA Honours
+                (Bachelor of Computer Applications) is an advanced undergraduate
+                program that focuses on providing in-depth knowledge of computer
+                science, programming, software development, and IT applications.
+                This extended program includes a comprehensive curriculum with
+                core subjects like programming languages, database management,
+                web development, and computer networks, along with additional
+                research, internships, and specialized electives in the final
+                year. It prepares students for technical roles in the IT
+                industry, as well as for pursuing higher education or research
+                in computer science. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bscit">
+            <div class="course-tag">3 Years</div>
+            <div class="content">
+              <h3>BScIT</h3>
+              <p>
+                The Bachelor of Science in Information Technology (BScIT) is a
+                three-year undergraduate program designed to equip students with
+                foundational knowledge and practical skills in the field of IT.
+                This course covers essential topics such as programming,
+                database management, web development, computer networks, and
+                software engineering, providing a balanced understanding of both
+                theory and application. Students gain hands-on experience
+                through lab sessions, projects, and assignments, which prepare
+                them to tackle real-world IT challenges. The BScIT program
+                fosters problem-solving and analytical skills, which are
+                essential for adapting to the fast-paced tech industry.
+                Graduates of this program can pursue careers in areas like
+                software development, IT support, web design, systems
+                administration, and network management. The BScIT degree also
+                serves as a stepping stone for further studies, such as a
+                Master's in Information Technology, or for obtaining specialized
+                certifications in areas like cybersecurity, data analytics, or
+                cloud computing, opening up additional career opportunities in a
+                variety of tech-driven fields. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bca-h">
+            <div class="course-tag">4 Years</div>
+            <div class="content">
+              <h3>BCA-Honors</h3>
+              <p>
+                The Bachelor of Computer Applications - Honors (BCA-Honors) is a
+                four-year undergraduate program designed to give students an
+                in-depth understanding of computer science, software
+                development, and modern technological applications. This program
+                is aligned with the latest industry standards, offering a
+                comprehensive curriculum that covers programming languages, data
+                structures, algorithms, database management, artificial
+                intelligence, cybersecurity, and cloud computing. With an extra
+                year compared to the traditional BCA program, BCA-Honors allows
+                students to delve deeper into advanced topics and gain practical
+                experience through extensive lab work, internships, and
+                real-world projects. The program focuses not only on technical
+                skills but also on critical thinking, analytical
+                problem-solving, and project management. Graduates of BCA-Honors
+                are well-prepared for careers in software engineering, data
+                science, IT consultancy, network administration, and more.
+                Additionally, the program offers a strong foundation for further
+                studies, such as a Master's in Computer Science, or professional
+                certifications in fields like data analytics and cybersecurity,
+                enhancing career prospects in a rapidly evolving tech landscape.
+                <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bscit-h">
+            <div class="course-tag">4 Years</div>
+            <div class="content">
+              <h3>BScIT-Honors</h3>
+              <p>
+                The Bachelor of Science in Information Technology - Honors
+                (BScIT-Honors) is a four-year undergraduate program that
+                provides students with an extensive education in the principles
+                and applications of information technology. This course covers
+                core subjects such as programming, software engineering, network
+                security, database management, web development, data analytics,
+                and cloud computing. The additional fourth year allows students
+                to explore advanced topics in greater depth, participate in
+                hands-on projects, and gain industry-relevant skills through
+                internships and lab work. With a strong emphasis on both
+                theoretical knowledge and practical applications, BScIT-Honors
+                prepares students to address complex IT challenges in real-world
+                scenarios. Graduates of this program are well-suited for careers
+                in software development, systems analysis, IT consulting,
+                cybersecurity, and data science. The BScIT-Honors degree also
+                lays a solid foundation for advanced studies, such as a Master's
+                in Information Technology or certifications in areas like
+                artificial intelligence, data science, and network security,
+                making it ideal for students aspiring to excel in the
+                fast-growing tech industry. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bcom">
+            <div class="course-tag">3 Years</div>
+            <div class="content">
+              <h3>BCom</h3>
+              <p>
+                The Bachelor of Commerce (BCom) is a three-year undergraduate
+                program designed to provide students with a solid foundation in
+                business, finance, accounting, and economics. This versatile
+                course equips students with the knowledge and skills needed to
+                understand and navigate the complexities of commerce and trade.
+                Key subjects typically covered include financial accounting,
+                business law, management principles, taxation, economics, and
+                marketing, offering a well-rounded business education. Students
+                also gain practical skills through case studies, projects, and
+                internships, which enhance their problem-solving, analytical,
+                and decision-making abilities. A BCom degree opens doors to
+                diverse career opportunities in sectors such as banking,
+                finance, accounting, auditing, and management. Graduates are
+                well-prepared for roles as accountants, financial analysts, tax
+                consultants, and business advisors, and the course also provides
+                an excellent foundation for pursuing professional certifications
+                such as CA, ACCA, and CFA, or for continuing with postgraduate
+                studies in business or finance. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card dpharma">
+            <div class="course-tag">2 Years</div>
+            <div class="content">
+              <h3>D Pharma</h3>
+              <p>
+                The Diploma in Pharmacy (D. Pharma) is a foundational course in
+                pharmaceutical sciences designed to provide students with
+                essential knowledge and practical skills in pharmacy. Typically
+                spanning two years, the program covers core subjects such as
+                Pharmacology, Pharmaceutics, Pharmaceutical Chemistry, and
+                Hospital and Clinical Pharmacy. The curriculum balances
+                theoretical learning with hands-on laboratory experience,
+                enabling students to understand drug compositions, mechanisms,
+                and their effects on the human body. D. Pharma graduates are
+                equipped to assist pharmacists, manage pharmaceutical
+                businesses, or work in hospital pharmacies, healthcare
+                facilities, and drug regulatory organizations. The course serves
+                as an ideal entry point into the field of pharmacy, allowing
+                graduates to either enter the workforce directly or pursue
+                advanced studies, such as a Bachelor of Pharmacy (B. Pharma), to
+                expand their expertise and career opportunities. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bpharma">
+            <div class="course-tag">4 Years</div>
+            <div class="content">
+              <h3>B Pharma</h3>
+              <p>
+                The Bachelor of Pharmacy (B. Pharma) is a comprehensive
+                four-year undergraduate program that provides in-depth knowledge
+                and training in pharmaceutical sciences. It covers a broad range
+                of subjects, including Pharmacology, Medicinal Chemistry,
+                Pharmacognosy, Pharmaceutics, and Clinical Pharmacy, equipping
+                students with the skills to develop, test, and manage
+                medications. Through both theoretical classes and extensive lab
+                work, students gain an understanding of drug composition,
+                therapeutic effects, drug interactions, and safe usage. The B.
+                Pharma curriculum also emphasizes ethical considerations,
+                regulatory standards, and practical aspects of pharmaceutical
+                management. Graduates are well-prepared to work in various
+                healthcare settings, such as hospitals, drug manufacturing
+                companies, regulatory agencies, and research laboratories.
+                Additionally, a B. Pharma degree opens doors to further studies
+                like a Master of Pharmacy (M. Pharma) or Doctor of Pharmacy
+                (Pharm.D.), for those seeking advanced knowledge or
+                specialization in fields such as clinical research, drug
+                development, and quality control. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card ba-h">
+            <div class="course-tag">3 Years</div>
+            <div class="content">
+              <h3>BA-History</h3>
+              <p>
+                The Bachelor of Arts in History (BA History) is a three-year
+                undergraduate program that delves into the study of human
+                civilization, cultures, events, and social transformations
+                across different time periods. This course provides a
+                comprehensive overview of ancient, medieval, and modern history,
+                covering topics like world civilizations, political revolutions,
+                economic developments, and cultural changes. Students gain
+                critical insights into the historical context of societal
+                structures, global conflicts, social movements, and cultural
+                heritage, analyzing the factors that have shaped the world
+                today. Through a combination of lectures, research, and
+                historical analysis, students develop strong critical thinking,
+                research, and analytical skills. Graduates of BA History have a
+                broad range of career options, including roles in education,
+                archaeology, museum curation, public administration, and
+                heritage conservation. The course also prepares students for
+                further studies in history or related fields, such as political
+                science, international relations, and anthropology, offering
+                pathways to specialize in academic research or professional
+                roles within cultural and historical institutions. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card ma-e">
+            <div class="course-tag">2 Years</div>
+            <div class="content">
+              <h3>MA-English</h3>
+              <p>
+                The Master of Arts in English (MA English) is a two-year
+                postgraduate program that offers in-depth exploration and
+                analysis of English literature, linguistics, and critical
+                theory. This course broadens students' understanding of literary
+                history, examining classical, modern, and contemporary works
+                from British, American, and global literature. It includes the
+                study of poetry, drama, prose, and literary criticism, along
+                with specialized topics such as postcolonial studies, gender
+                studies, and cultural theory. Through close reading and
+                analysis, students develop advanced critical thinking,
+                analytical, and communication skills, as well as a nuanced
+                appreciation for language and literary expression. The MA
+                English program prepares graduates for a wide range of careers,
+                including academia, publishing, journalism, content writing,
+                editing, and public relations. For those interested in further
+                academic pursuits, it also provides a solid foundation for
+                doctoral studies in literature or related fields, opening up
+                paths in research, teaching, and literary analysis at higher
+                levels. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card bfst">
+            <div class="course-tag">4 Years</div>
+            <div class="content">
+              <h3>BFST</h3>
+              <p>
+                The Bachelor of Food Science and Technology (BFST) is a
+                four-year undergraduate program focused on the scientific
+                principles behind food production, processing, preservation, and
+                quality control. This course provides students with a solid
+                foundation in the chemistry, microbiology, and nutrition aspects
+                of food, along with practical skills in food safety, packaging,
+                and sustainable production techniques. The BFST curriculum
+                covers a wide range of topics, including food engineering, dairy
+                technology, food biochemistry, and sensory analysis, enabling
+                students to understand and apply the science of food at various
+                stages from farm to table. With a strong emphasis on research
+                and lab-based learning, students are trained to develop new food
+                products, improve existing processes, and ensure food quality
+                and safety standards. Graduates of BFST are well-prepared for
+                careers in the food industry, working in roles such as food
+                technologists, quality control analysts, product developers, and
+                regulatory affairs specialists. The course also serves as a
+                foundation for advanced studies and research in food science,
+                nutrition, and related fields, which can lead to more
+                specialized careers in academia, public health, and food policy.
+                <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+
+          <div class="card ba-soc">
+            <div class="course-tag">3 Years</div>
+            <div class="content">
+              <h3>BA Sociology</h3>
+              <p>
+                The Bachelor of Arts in Sociology (BA Sociology) is a three-year
+                undergraduate program that explores the complexities of human
+                society, social behavior, and cultural dynamics. This course
+                provides students with a deep understanding of social
+                structures, relationships, and institutions, examining topics
+                such as family, education, religion, politics, and social
+                change. Through a combination of theoretical study and empirical
+                research, students learn to analyze issues like inequality,
+                globalization, gender, crime, and social movements. BA Sociology
+                fosters critical thinking and analytical skills, enabling
+                students to understand and address societal challenges in a
+                thoughtful and informed way. Graduates with a BA in Sociology
+                are well-prepared for careers in social services, community
+                development, public policy, human resources, and social
+                research. The degree also serves as a strong foundation for
+                further studies in sociology, anthropology, social work, or
+                related fields, opening up pathways in academia, government,
+                NGOs, and private sectors that address social and cultural
+                issues. <br />
+                <br />
+              </p>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+
+    <script>
+      function toggleDropdown() {
+        var dropdownMenu = document.getElementById("dropdownMenu");
+        dropdownMenu.classList.toggle("show");
+      }
+
+      function scrollToSection(sectionClass) {
+        const section = document.querySelector(sectionClass);
+        section.scrollIntoView({ behavior: "smooth" });
+        document.getElementById("dropdownMenu").classList.remove("show");
+      }
+
+      window.onclick = function (event) {
+        if (!event.target.matches(".bx-dots-vertical-rounded")) {
+          const dropdowns = document.getElementsByClassName("dropdown-content");
+          for (const openDropdown of dropdowns) {
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+
+    <script>
+      let currentIndex = 0;
+      const carouselItems = document.querySelectorAll(".carousel-item");
+      const indicators = document.querySelectorAll(".indicator");
+
+      function scrollToCourse(courseId) {
+        const courseElement = document.querySelector(courseId);
+        if (courseElement) {
+          courseElement.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      function showCarouselItem(index) {
+        const offset = -index * 100;
+
+        document.querySelector(
+          ".carousel"
+        ).style.transform = `translateX(${offset}%)`;
+
+        indicators.forEach((indicator, i) => {
+          indicator.classList.toggle("active", i === index);
+        });
+      }
+
+      function autoScrollCarousel() {
+        currentIndex = (currentIndex + 1) % carouselItems.length;
+        showCarouselItem(currentIndex);
+      }
+
+      indicators.forEach((indicator, i) => {
+        indicator.addEventListener("click", () => {
+          currentIndex = i;
+          showCarouselItem(currentIndex);
+        });
+      });
+
+      setInterval(autoScrollCarousel, 3000);
+    </script>
+  </body>
+</html>

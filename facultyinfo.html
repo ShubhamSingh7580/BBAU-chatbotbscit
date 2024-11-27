@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faculty Information</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="chatbot.js" defer></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="allfeatures.html">App Features</a>
+        <a href="Chatbot.html">Chatbot</a>
+        <a href="list.html">List of Qs</a>
+        <a href="courseinfo.html">Course Info</a>
+        <a href="contact.html">ContactUs</a>
+        <a href="about.html">About College</a>
+        <a href="map.html">Campus Map</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+      <h2 class="fi-h">Faculty Information</h2>
+    </header>
+
+    <div class="logo-section2">
+      <img src="images/bbau-logo.jpg" alt="BBAU Logo" class="college-logo" />
+      <h1 class="college-name">Babasaheb Bhimrao Ambedkar University,<br /></h1>
+      <h2 class="college-Q">A Central University <br /></h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="f-heading">
+      <h2>BBAU Faculty Members</h2>
+    </div>
+    <div class="divider"></div>
+
+    <div class="course-list">
+      <button class="course-button" onclick="showFaculty('bscit')">
+        BScIT Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('bca')">
+        BCA Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('bcom')">
+        BCom Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('dpharma')">
+        D.Ph. &amp; B.Ph. Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('ba-h')">
+        BA &amp; MA His. Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('ma-e')">
+        MA Eng. Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('bfst')">
+        B. FST Faculty
+      </button>
+      <button class="course-button" onclick="showFaculty('basoc')">
+        BA Soc. Faculty
+      </button>
+    </div>
+
+    <div class="f-container">
+      <div class="faculty-box bscit hidden">
+        <img
+          src="images/DirectorSir.jpg"
+          alt="Director"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Sandeep kr. Nayak</div>
+          <div class="faculty-position">
+            Director of BBAU, Satellite Centre <br />
+            Associate Professor &amp; Coordinator of IT Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: nayak.kr.sandeep@gmail.com <br />Mobile: +91 9935513331,
+            7905043562
+          </div>
+          <a
+            href="resumes/Dr_SandeepNayak.pdf"
+            class="resume-button"
+            download="Dr. SandeepNayak.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bscit hidden">
+        <img
+          src="images/DR_Neeraj_T.jpg"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Neeraj Tiwari</div>
+          <div class="faculty-position">Assistant Professor, Dept. of IT</div>
+          <div class="faculty-contact">
+            Email: neeraj@bbau.ac.in <br />Mobile: +91 9793825005
+          </div>
+          <a
+            href="resumes/Dr_Neeraj.pdf"
+            class="resume-button"
+            download="Dr. Neeraj.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bca hidden">
+        <img
+          src="images/ravindra.jpeg"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Ravindra Nath</div>
+          <div class="faculty-position">
+            Associate Professor &amp; Coordinator of CS Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: rnkatiyar@gmail.com
+            <br />Mobile: +91 8948758999
+          </div>
+          <a
+            href="resumes/rnkatiyar.pdf"
+            class="resume-button"
+            download="DR. Ravindra.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bca hidden">
+        <img
+          src="images/Dr.AKSir.jpg"
+          alt="Faculty Member 2"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Aditya Kr. Khamparia</div>
+          <div class="faculty-position">Assistant Professor, Dept. of CS</div>
+          <div class="faculty-contact">
+            Email: aditya.khamparia88@gmail.com and aditya.kc@bbau.ac.in
+            <br />Mobile: +91 9888767262
+          </div>
+          <a
+            href="resumes/Dr_Aditya_Khamparia.pdf"
+            class="resume-button"
+            download="Dr. Aditya Khamparia.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bca hidden">
+        <img
+          src="images/Dr_Yogdhar.jpg"
+          alt="Faculty Member 3"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Yogadhar Pandey</div>
+          <div class="faculty-position">Assistant Professor, Dept. of CS</div>
+          <div class="faculty-contact">
+            Email: yogadhar.pandey@gmail.com <br />
+            Mobile: +91 8770654829
+          </div>
+          <a
+            href="resumes/Dr_Yogadhar.pdf"
+            class="resume-button"
+            download="Dr Yogadhar.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bcom hidden">
+        <img
+          src="images/Leena.png"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Leena S. Shimpi</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of Commerce Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: leena3174@gmail.com <br />
+            Mobile: +91 7621904662
+          </div>
+          <a
+            href="resumes/Dr_LeenaS.pdf"
+            class="resume-button"
+            download="Dr_LeenaS.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box dpharma hidden">
+        <img
+          src="images/drvijay.jpg"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Vijayakumar M.R.</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of D. Pharma &amp; B.Pharma
+            Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: drvijayakumarmr@gmail.com<br />
+            Mobile: +91 9793947762
+          </div>
+          <a
+            href="resumes/drvijay.pdf"
+            class="resume-button"
+            download="Dr. Vijayakumar.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box ba-h hidden">
+        <img
+          src="images/drrajesh.png"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Rajesh Kumar</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of History Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: rajesh.baudh75@gmail.com <br />
+            Mobile: +91 9838635888 &amp; 8115723885
+          </div>
+          <a
+            href="resumes/RajeshKumar.pdf"
+            class="resume-button"
+            download="Dr. Rajesh Kumar.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box ba-h hidden">
+        <img
+          src="images/drsushil.png"
+          alt="Faculty Member 2"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Sushil Kumar Pandey</div>
+          <div class="faculty-position">
+            Assistant Professor of History Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: dr.sushilpandey@gmail.com <br />
+            Mobile: +91 9005516024
+          </div>
+          <a
+            href="resumes/drpandey.pdf"
+            class="resume-button"
+            download="Dr. Sushil.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box ma-e hidden">
+        <img
+          src="images/drpatra.jpg"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. B. Patra</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of English Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: drpatra2015@gmail.com <br />
+            Mobile: +91 9438305561
+          </div>
+          <a
+            href="resumes/DrPatra.pdf"
+            class="resume-button"
+            download="Dr. Patra.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bfst hidden">
+        <img
+          src="images/drharsh.png"
+          alt="Faculty Member 1"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Harsh Pr. Sharma</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of Food Science Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: harshsharma1983@gmail.com <br />
+            Mobile: +91 9408398737
+          </div>
+          <a
+            href="resumes/Harsh.pdf"
+            class="resume-button"
+            download="Dr. Harsh.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bfst hidden">
+        <img
+          src="images/mrskomal.png"
+          alt="Faculty Member 2"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Mrs. Komal Singh</div>
+          <div class="faculty-position">
+            Assistant Professor of Food Science Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: komalsingh16037@gmail.com <br />
+            Mobile: +91 9984958203
+          </div>
+          <a
+            href="resumes/Komal Singh.pdf"
+            class="resume-button"
+            download="Komal Singh.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box bfst hidden">
+        <img
+          src="images/mrmurali.png"
+          alt="Faculty Member 3"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Mr. K. Murali Naik</div>
+          <div class="faculty-position">
+            Assistant Professor of Food Science Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: murali5fst@gmail.com <br />
+            Mobile: +91 7989425845
+          </div>
+          <a
+            href="resumes/Murali Naik K.pdf"
+            class="resume-button"
+            download="Murali Naik.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+
+      <div class="faculty-box basoc hidden">
+        <img
+          src="images/drshankar.png"
+          alt="Faculty Member 2"
+          class="faculty-image"
+        />
+        <div class="faculty-info">
+          <div class="faculty-name">Dr. Shankar Kr. Lal</div>
+          <div class="faculty-position">
+            Assistant Professor and Coordinator of Sociology Dept.
+          </div>
+          <div class="faculty-contact">
+            Email: shankarkrlal@gmail.com <br />
+            Mobile: +91 6201430693
+          </div>
+          <a
+            href="resumes/Shankarlal.pdf"
+            class="resume-button"
+            download="Dr. Shankar Lal.pdf"
+            >Download Resume</a
+          >
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+
+    <script>
+      function showFaculty(course) {
+        const facultyBoxes = document.querySelectorAll(".faculty-box");
+        facultyBoxes.forEach((box) => box.classList.add("hidden"));
+
+        const selectedCourseFaculty = document.querySelectorAll(`.${course}`);
+        selectedCourseFaculty.forEach((box) => box.classList.remove("hidden"));
+      }
+    </script>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+  </body>
+</html>

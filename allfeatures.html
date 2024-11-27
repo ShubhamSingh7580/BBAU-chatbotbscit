@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Chatbot App Features</title>
+    <link rel="icon" type="image/png" href="images/appicon.jpg" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: #724ae8;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+      }
+      .header .af-h {
+        font-size: 1.3rem;
+        color: white;
+        margin-right: 20%;
+      }
+      .header .h2 {
+        font-size: 1.3rem;
+        color: white;
+        margin-right: 5%;
+      }
+      .navbar {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        border-radius: 10px;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        width: 200px;
+      }
+      .navbar.responsive {
+        display: flex;
+      }
+      .navbar a {
+        font-size: 16px;
+        color: #000;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      .navbar a:hover {
+        color: #724ae8;
+      }
+      .nav-menu-btn {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        background-color: #ff6b6b;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .nav-menu-btn i {
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+      }
+      .nav-menu-btn:hover {
+        background-color: #ff4757;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .container {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .container .logo-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .container .college-logo {
+        width: 150px;
+        height: auto;
+        margin-top: 40px;
+        border-radius: 25%;
+      }
+      .container .college-name {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: #724ae8;
+        text-align: center;
+      }
+      .container .college-Q {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+        text-align: center;
+      }
+      .container .divider {
+        border-top: 2px solid #ddd;
+        margin: 20px 0;
+        width: 100%;
+      }
+      .container .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+      .card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      }
+      .card:hover i,
+      .card:hover h2,
+      .card:hover p {
+        color: orange;
+      }
+      .card i {
+        font-size: 3em;
+        color: #666;
+        margin-bottom: 15px;
+        transition: color 0.3s ease;
+      }
+      .card h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+      }
+      .card p {
+        font-size: 1em;
+        color: #666;
+        line-height: 1.5;
+        transition: color 0.3s ease;
+      }
+      @media only screen and (max-width: 600px) {
+        .container .college-name {
+          font-size: 1.5rem;
+        }
+        .container .college-Q {
+          font-size: 1.1rem;
+        }
+        .container .college-logo {
+          width: 120px;
+        }
+        .container .card-container {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+        .card-container .card {
+          padding: 15px;
+        }
+        .card-container .card i {
+          font-size: 2.5em;
+        }
+        .card-container .card h2 {
+          font-size: 1.25em;
+        }
+        .card-container .card p {
+          font-size: 0.9em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="navbar" id="navMenu">
+        <a href="Chatbot.html">Chatbot</a>
+        <a href="list.html">List of Qs</a>
+        <a href="courseinfo.html">Course Info</a>
+        <a href="facultyinfo.html">Faculty Info</a>
+        <a href="contact.html">ContactUs</a>
+        <a href="about.html">About College</a>
+        <a href="map.html">Campus Map</a>
+      </div>
+
+      <div class="nav-menu-btn">
+        <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+      </div>
+      <h2 class="af-h">Chatbot App Features</h2>
+    </header>
+
+    <div class="container">
+      <div class="logo-section">
+        <img src="images/bbau-logo.jpg" alt="BBAU Logo" class="college-logo" />
+        <h1 class="college-name">
+          Babasaheb Bhimrao Ambedkar University,<br />
+        </h1>
+        <h2 class="college-Q">A Central University <br /></h2>
+        <h1 class="college-name">Satellite Centre, Amethi- 227413</h1>
+        <h2 class="college-Q">
+          Accredited 'A++' Grade by NAAC (2023) <br />
+          NIRF Rank 33 (2024)
+        </h2>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card-container">
+        <div class="card" onclick="location.href='Chatbot.html'">
+          <i class="bx bx-bot"></i>
+          <h2>Chatbot</h2>
+          <p>Interact with the chatbot for all your queries.</p>
+        </div>
+        <div class="card" onclick="location.href='list.html'">
+          <i class="bx bx-list-ul"></i>
+          <h2>List of Qs</h2>
+          <p>Find specific questions to get answer by Chatbot.</p>
+        </div>
+        <div class="card" onclick="location.href='courseinfo.html'">
+          <i class="bx bx-copyright"></i>
+          <h2>Course Info</h2>
+          <p>Detailed information about the courses offered.</p>
+        </div>
+        <div class="card" onclick="location.href='facultyinfo.html'">
+          <i class="bx bxs-user-account"></i>
+          <h2>Faculty Info</h2>
+          <p>Know more about the faculty members.</p>
+        </div>
+        <div class="card" onclick="location.href='contact.html'">
+          <i class="bx bx-envelope"></i>
+          <h2>Contact Us</h2>
+          <p>Submit feedback or get in touch with us.</p>
+        </div>
+        <div class="card" onclick="location.href='about.html'">
+          <i class="bx bx-unite"></i>
+          <h2>About University</h2>
+          <p>
+            Know more about the university and go through with the gallery
+            section.
+          </p>
+        </div>
+        <div class="card" onclick="location.href='map.html'">
+          <i class="bx bx-map"></i>
+          <h2>University Map</h2>
+          <p>Navigate through the university campus.</p>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+
+    <script>
+      function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+        if (i.className === "navbar") {
+          i.className += " responsive";
+        } else {
+          i.className = "navbar";
+        }
+      }
+    </script>
+
+    <script>
+      if (!window.location.href.includes("allfeatures.html")) {
+        window.location.href = "allfeature.html";
+      }
+    </script>
+  </body>
+</html>
